@@ -1,0 +1,81 @@
+/* ===== Tokens ===== */
+:root{
+  --stone:#E8E1D0;
+  --stone-2:#DCD1B4;
+  --ink:#26221B;
+  --dusk:#1F2A3C;
+  --dusk-2:#2C3B52;
+  --copper:#B5652D;
+  --copper-2:#D98A4F;
+  --sage:#6B7A56;
+  --danger:#9B3B32;
+
+  --font-display:'Fraunces', serif;
+  --font-body:'Work Sans', sans-serif;
+  --font-mono:'IBM Plex Mono', monospace;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--stone);
+  color:var(--ink);
+  font-family:var(--font-body);
+  line-height:1.55;
+}
+a{color:var(--copper);}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px;}
+.hidden{display:none !important;}
+
+a:focus-visible, button:focus-visible, input:focus-visible{
+  outline:2px solid var(--copper);
+  outline-offset:2px;
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+}
+
+.topbar{padding:20px 0; background:var(--dusk); color:var(--stone);}
+.topbar-inner{display:flex;align-items:center;justify-content:space-between;}
+.wordmark{font-family:var(--font-display); font-weight:600; font-size:1.4rem; letter-spacing:0.02em;}
+.pill{
+  font-family:var(--font-mono); font-size:0.72rem; letter-spacing:0.03em;
+  background:rgba(232,225,208,0.1); border:1px solid rgba(232,225,208,0.25);
+  padding:5px 12px; border-radius:999px;
+}
+
+.hero{
+  position:relative;
+  background:linear-gradient(180deg, var(--dusk) 0%, var(--dusk-2) 100%);
+  color:var(--stone);
+  padding:64px 0 88px;
+  overflow:hidden;
+}
+.ridge-art{position:absolute; inset:0; opacity:0.9; pointer-events:none;}
+.ridge-art svg{width:100%; height:100%;}
+.ridge-1{fill:#26364C;}
+.ridge-2{fill:#324562;}
+.ping-dot{fill:var(--copper-2);}
+.ping-ring{
+  fill:none; stroke:var(--copper-2); stroke-width:2;
+  transform-origin:420px 255px;
+  animation:ping 2.6s ease-out infinite;
+}
+@keyframes ping{
+  0%{ r:5; opacity:0.9; }
+  100%{ r:38; opacity:0; }
+}
+
+.hero-inner{position:relative; z-index:1;}
+.eyebrow{
+  font-family:var(--font-mono); font-size:0.8rem; letter-spacing:0.04em;
+  color:var(--copper-2); margin:0 0 14px;
+}
+.headline{
+  font-family:var(--font-display); font-weight:600;
+  font-size:clamp(2.1rem, 5vw, 3.4rem); line-height:1.08; margin:0 0 20px;
+}
+.headline em{font-style:italic; color:var(--copper-2);}
+.sub{max-width:520px; font-size:1.05rem; color:rgba(232,225,208,0.85); margin:0 0 36px;}
