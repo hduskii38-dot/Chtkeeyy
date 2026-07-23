@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chtkeey — Talk to Duhok</title>
+<meta name="description" content="Chtkeey is anonymous random chat, strictly for people in Duhok and the surrounding area.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <span class="wordmark">chtkeey</span>
+    <span class="pill">دهۆک · Duhok only</span>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="ridge-art" aria-hidden="true">
+      <svg viewBox="0 0 800 400" preserveAspectRatio="none">
+        <path class="ridge ridge-1" d="M0,300 L60,260 L140,300 L220,220 L300,270 L380,190 L460,260 L540,210 L620,280 L700,230 L800,270 L800,400 L0,400 Z"/>
+        <path class="ridge ridge-2" d="M0,340 L90,300 L170,330 L260,270 L340,310 L420,250 L500,300 L580,260 L660,320 L740,280 L800,310 L800,400 L0,400 Z"/>
+        <circle id="ping-dot" class="ping-dot" cx="420" cy="255" r="5"/>
+        <circle id="ping-ring" class="ping-ring" cx="420" cy="255" r="5"/>
+      </svg>
+    </div>
+
+    <div class="wrap hero-inner">
+      <p class="eyebrow">Silav — a chat room with only one rule</p>
+      <h1 class="headline">Meet someone new,<br> <em>right here in Duhok.</em></h1>
+      <p class="sub">Chtkeey pairs you with a random stranger for a one-on-one text chat —
+        but only if they're actually nearby. Not Baghdad, not Berlin. Duhok, Zakho,
+        Amedi, Sumel, Akre and the towns around them.</p>
+
+      <div id="gate" class="gate-card">
+        <div id="gate-idle" class="gate-step">
+          <button id="btn-check-location" class="btn btn-primary">Confirm I'm in the Duhok area</button>
+          <p class="fineprint">We check your device location for a moment — it isn't stored, and it's only used to confirm the radius below.</p>
+        </div>
+
+        <div id="gate-checking" class="gate-step hidden">
+          <div class="spinner" aria-hidden="true"></div>
+          <p>Checking your location…</p>
+        </div>
+
+        <div id="gate-allowed" class="gate-step hidden">
+          <p class="gate-result gate-result--ok">✓ You're in range<span id="distance-note"></span></p>
+          <label class="field">
+            <span>Pick a nickname (no real names, please)</span>
+            <input id="nickname" type="text" maxlength="20" placeholder="e.g. NightHawk92" autocomplete="off">
+          </label>
+          <label class="checkbox-row">
+            <input type="checkbox" id="agree-age">
+            <span>I'm 18 or older and I agree to the <a href="#guidelines">community guidelines</a>.</span>
+          </label>
+          <button id="btn-enter" class="btn btn-primary" disabled>Start chatting</button>
+        </div>
+
+        <div id="gate-denied" class="gate-step hidden">
+          <p class="gate-result gate-result--no">This one's local only</p>
+          <p id="denied-detail" class="fineprint">Your location came back outside the Duhok area, so we can't let you in right now. Chtkeey is built to keep the room genuinely local.</p>
+          <button id="btn-retry" class="btn btn-ghost">Try again</button>
+        </div>
+
+        <div id="gate-error" class="gate-step hidden">
+          <p class="gate-result gate-result--no">We couldn't read your location</p>
+          <p class="fineprint">Allow location access in your browser, or check your connection, then try again.</p>
+          <button id="btn-retry-error" class="btn btn-ghost">Try again</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2 class="section-title">How a conversation starts</h2>
+      <div class="steps">
+        <div class="step">
+          <span class="step-mark">confirm</span>
+          <h3>We check you're local</h3>
+          <p>A quick location check keeps the room limited to Duhok and the towns around it — no outsiders scrolling in.</p>
+        </div>
+        <div class="step">
+          <span class="step-mark">match</span>
+          <h3>You're paired instantly</h3>
+          <p>No profiles, no swiping. You're dropped into a one-on-one text chat with someone else who's online right now.</p>
+        </div>
+        <div class="step">
+          <span class="step-mark">talk</span>
+          <h3>Talk, or move on</h3>
+          <p>Hit it off? Keep talking. Not feeling it? Tap "Next" and you're matched with someone else in seconds.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="guidelines">
+    <div class="wrap">
+      <h2 class="section-title">The one rule, and a few ground rules</h2>
+      <p class="section-lede">The one rule is: be someone your neighbours would be glad to talk to. Everything below just protects that.</p>
+      <ul class="rules">
+        <li>No harassment, hate speech, or targeting anyone for who they are.</li>
+        <li>Nothing sexual, and nothing involving minors — Chtkeey is 18+.</li>
+        <li>No sharing anyone's personal details, yours or theirs.</li>
+        <li>Report anything that crosses a line — three reports and someone's out.</li>
+        <li>Chats aren't stored once they end. Screenshotting someone else's words to share elsewhere isn't in the spirit of the room.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <span>chtkeey.com — made for Duhok</span>
+    <span class="muted">Text-only. Anonymous. 18+.</span>
+  </div>
+</footer>
+
+<script src="/js/landing.js"></script>
+</body>
+</html>
