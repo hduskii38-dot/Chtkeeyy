@@ -1,0 +1,19 @@
+{
+  "name": "chtkeey",
+  "version": "1.0.0",
+  "description": "Chtkeey — anonymous random chat for Duhok and the surrounding area.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "socket.io": "^4.7.5",
+    "express-rate-limit": "^7.4.0",
+    "dotenv": "^16.4.5"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
