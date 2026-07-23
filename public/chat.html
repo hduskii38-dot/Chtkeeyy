@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chtkeey — chatting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div class="chat-shell">
+  <div class="chat-topbar">
+    <span class="wordmark">chtkeey</span>
+    <span id="partner-status" class="partner-status">not connected</span>
+  </div>
+
+  <div id="searching-view" class="searching-view">
+    <div class="radar" aria-hidden="true">
+      <svg viewBox="0 0 120 120">
+        <circle class="ring" cx="60" cy="60" r="6"/>
+        <circle class="ring" cx="60" cy="60" r="6"/>
+        <circle class="ring" cx="60" cy="60" r="6"/>
+        <circle class="dot" cx="60" cy="60" r="5"/>
+      </svg>
+    </div>
+    <p>Looking for someone nearby to talk to…</p>
+    <button id="btn-cancel-search" class="btn btn-ghost">Cancel</button>
+  </div>
+
+  <div id="chat-view" class="hidden" style="display:contents;">
+    <div id="chat-body" class="chat-body"></div>
+    <div class="chat-input-row">
+      <button id="btn-next" class="icon-btn next" title="Next stranger">⟳</button>
+      <input id="msg-input" type="text" maxlength="1000" placeholder="Say something…" autocomplete="off">
+      <button id="btn-report" class="icon-btn report" title="Report">⚑</button>
+    </div>
+  </div>
+</div>
+
+<div id="report-modal" class="report-modal hidden">
+  <div class="card">
+    <h3>Report this chat</h3>
+    <label class="report-reason"><input type="radio" name="reason" value="harassment"> Harassment or hate speech</label>
+    <label class="report-reason"><input type="radio" name="reason" value="sexual"> Sexual content</label>
+    <label class="report-reason"><input type="radio" name="reason" value="minor"> Concern about a minor</label>
+    <label class="report-reason"><input type="radio" name="reason" value="other"> Something else</label>
+    <div style="display:flex; gap:10px; margin-top:14px;">
+      <button id="btn-submit-report" class="btn btn-primary">Submit report</button>
+      <button id="btn-cancel-report" class="btn btn-ghost">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/chat.js"></script>
+</body>
+</html>
